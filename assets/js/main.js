@@ -36,6 +36,24 @@
     Object.keys(byId).forEach(function (id) { io.observe(document.getElementById(id)); });
   }
 
+  /* ----- play thumbnail videos only while they are near the viewport ----- */
+  var vids = document.querySelectorAll('.pub__thumb video');
+  if ('IntersectionObserver' in window && vids.length) {
+    var vio = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        var v = entry.target;
+        if (entry.isIntersecting) {
+          v.muted = true;
+          var p = v.play();
+          if (p && p.catch) p.catch(function () {});
+        } else {
+          v.pause();
+        }
+      });
+    }, { rootMargin: '200px 0px' });
+    Array.prototype.forEach.call(vids, function (v) { vio.observe(v); });
+  }
+
   /* ----- live star counts on "Code" links (fails silently, e.g. when rate-limited) ----- */
   var codeLinks = document.querySelectorAll('a[data-repo]');
   Array.prototype.forEach.call(codeLinks, function (a) {
