@@ -89,8 +89,7 @@
   }
   function currentTheme() {
     var a = document.documentElement.getAttribute('data-theme');
-    if (a === 'light' || a === 'dark') return a;
-    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    return a === 'dark' ? 'dark' : 'light';   // light everywhere unless the reader picks dark
   }
   function applyTheme() {
     theme = currentTheme();
@@ -205,7 +204,6 @@
   document.addEventListener('visibilitychange', function () { if (document.hidden) stop(); else start(); });
   var mo = new MutationObserver(function () { applyTheme(); if (!running && enabled) draw(0); });
   mo.observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
-  window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function () { applyTheme(); if (!running && enabled) draw(0); });
   reduceMQ.addEventListener('change', function () { if (reduceMQ.matches) { stop(); if (enabled) draw(0); } else start(); });
 
   build();
