@@ -97,24 +97,30 @@
   var codeLinks = document.querySelectorAll('a[data-repo]');
   Array.prototype.forEach.call(codeLinks, function (a) {
     var repo = a.getAttribute('data-repo');
-    if (!repo || typeof fetch !== 'function') return;
+    if (!repo) return;
+    var s = document.createElement('span');
+    s.className = 'stars';
+    a.appendChild(s);
+    // fallback count baked into the HTML shows at once; the live number replaces it when the API answers
+    var shown = parseInt(a.getAttribute('data-stars'), 10);
+    if (!isNaN(shown)) s.textContent = '★ ' + shown; else shown = 0;
+    if (typeof fetch !== 'function') return;
     fetch('https://api.github.com/repos/' + repo, { headers: { Accept: 'application/vnd.github+json' } })
       .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
       .then(function (j) {
         if (typeof j.stargazers_count !== 'number') return;
-        var s = document.createElement('span');
-        s.className = 'stars';
-        a.appendChild(s);
-        var n = j.stargazers_count;
+        var n = j.stargazers_count, from = shown;
+        s.title = 'Live from GitHub';
+        if (n === from) return;
         if (reduce || !window.requestAnimationFrame) { s.textContent = '★ ' + n; return; }
         var t0 = null;
         (function step(now) {
           if (t0 === null) t0 = now;
           var k = Math.min(1, (now - t0) / 900); k = 1 - Math.pow(1 - k, 3);
-          s.textContent = '★ ' + Math.round(n * k);
+          s.textContent = '★ ' + Math.round(from + (n - from) * k);
           if (k < 1) requestAnimationFrame(step);
         })(performance.now());
       })
-      .catch(function () {});
+      .catch(function () { if (s.textContent === '') s.remove(); });
   });
 })();
