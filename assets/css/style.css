@@ -199,6 +199,7 @@ h1, h2, h3 { font-family: var(--font-serif); font-weight: 600; letter-spacing: -
   gap: 14px;
 }
 .section > h2::after { content: ""; flex: 1; height: 1px; background: var(--border-strong); opacity: 0.6; }
+.h2__emoji { font-family: "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", sans-serif; font-size: 0.9em; margin-right: 2px; }
 .section__note { margin: -6px 0 18px; color: var(--muted); font-size: 0.95rem; }
 
 /* ---------- hero ---------- */
@@ -213,9 +214,9 @@ h1, h2, h3 { font-family: var(--font-serif); font-weight: 600; letter-spacing: -
 .hero__photo img {
   display: block;
   width: 200px;
-  height: 200px;
+  height: 250px;
   object-fit: cover;
-  border-radius: 28px;
+  border-radius: 24px;
   border: 1px solid var(--border);
   background: var(--surface-solid);
   box-shadow: var(--shadow);
@@ -249,10 +250,40 @@ h1, h2, h3 { font-family: var(--font-serif); font-weight: 600; letter-spacing: -
   font-weight: 500;
   transition: border-color 0.15s, color 0.15s, transform 0.15s;
 }
-.links a:hover { border-color: var(--accent); color: var(--accent); text-decoration: none; transform: translateY(-1px); }
+.links a:hover { border-color: var(--brand, var(--accent)); color: var(--brand, var(--accent)); text-decoration: none; transform: translateY(-1px); }
+.icon--brand { fill: currentColor; stroke: none; width: 17px; height: 17px; }
+.links a .icon--brand { color: var(--brand, currentColor); }
+.brand--mail { --brand: #EA4335; }
+.brand--scholar { --brand: #4285F4; }
+.brand--github { --brand: #181717; }
+.brand--linkedin { --brand: #0A66C2; }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .brand--github { --brand: #ffffff; }
+}
+:root[data-theme="dark"] .brand--github { --brand: #ffffff; }
 
 /* ---------- about ---------- */
-.about { padding-top: 8px; }
+.about { padding-top: 12px; }
+.interests {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 6px 24px;
+}
+.interests li { position: relative; padding-left: 18px; font-size: 1rem; }
+.interests li::before {
+  content: "";
+  position: absolute;
+  left: 2px;
+  top: 0.62em;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--accent);
+  opacity: 0.85;
+}
 .about p { margin: 0 0 0.9em; font-size: 1.02rem; }
 .tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
 .tag {
@@ -320,6 +351,7 @@ h1, h2, h3 { font-family: var(--font-serif); font-weight: 600; letter-spacing: -
 .pub__title a:hover { color: var(--accent); text-decoration: none; }
 .pub__authors { margin: 0 0 10px; font-size: 0.92rem; color: var(--muted); }
 .pub__authors strong { color: var(--text); font-weight: 600; }
+.pub__venue { margin: -6px 0 10px; font-size: 0.9rem; color: var(--muted); font-style: italic; }
 .pub__links { margin: 0; display: flex; flex-wrap: wrap; gap: 6px; }
 .pub__links a {
   display: inline-flex;
@@ -355,16 +387,10 @@ h1, h2, h3 { font-family: var(--font-serif); font-weight: 600; letter-spacing: -
 .edu .muted { font-size: 0.92rem; }
 
 /* ---------- services ---------- */
-.services { list-style: none; margin: 0; padding: 0; }
-.services li {
-  display: grid;
-  grid-template-columns: 170px 1fr;
-  gap: 14px;
-  padding: 9px 0;
-  border-bottom: 1px dashed var(--border-strong);
-}
-.services li:last-child { border-bottom: 0; }
-.services__label { color: var(--muted); font-weight: 500; font-size: 0.95rem; }
+.services { display: grid; gap: 14px; }
+.services__group h3 { margin: 0 0 6px; font-family: var(--font-sans); font-size: 1rem; font-weight: 600; letter-spacing: 0; }
+.services__group ul { margin: 0; padding-left: 20px; }
+.services__group li { margin: 3px 0; }
 
 /* ---------- footer ---------- */
 .footer {
@@ -381,12 +407,12 @@ h1, h2, h3 { font-family: var(--font-serif); font-weight: 600; letter-spacing: -
 /* ---------- responsive ---------- */
 @media (max-width: 720px) {
   .hero { grid-template-columns: 1fr; gap: 22px; padding: 32px 0 12px; }
-  .hero__photo img { width: 140px; height: 140px; border-radius: 22px; }
+  .hero__photo img { width: 144px; height: 180px; border-radius: 20px; }
   .hero__name { font-size: 2rem; }
   .pub { grid-template-columns: 1fr; gap: 14px; padding: 14px; }
   .pub__thumb img { aspect-ratio: 16 / 9; }
   .news li { grid-template-columns: 1fr; gap: 2px; }
-  .services li { grid-template-columns: 1fr; gap: 2px; }
+  .interests { grid-template-columns: 1fr; }
   .edu { grid-template-columns: 44px 1fr; gap: 12px; }
   .edu__logo { width: 44px; height: 44px; border-radius: 10px; }
   .edu__time { white-space: normal; }

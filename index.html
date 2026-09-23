@@ -4,12 +4,13 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Yuhang Zhang | 章雨航</title>
-  <meta name="description" content="Yuhang Zhang (章雨航) is a Ph.D. candidate at Nanyang Technological University working on embodied visual intelligence, world models, vision-language navigation and visuomotor learning for aerial robots.">
+  <meta name="description" content="Yuhang Zhang (章雨航) is a Ph.D. candidate at Nanyang Technological University working on visuomotor learning, world models and vision-language navigation for aerial robots.">
   <meta name="author" content="Yuhang Zhang">
   <meta property="og:title" content="Yuhang Zhang | 章雨航">
-  <meta property="og:description" content="Ph.D. candidate at NTU Singapore. Embodied visual intelligence, world models, vision-language navigation and visuomotor learning for aerial robots.">
+  <meta property="og:description" content="Ph.D. candidate at NTU Singapore. Visuomotor learning, world models and vision-language navigation for aerial robots.">
   <meta property="og:url" content="https://zzzzzyh111.github.io/">
   <meta property="og:type" content="website">
+  <meta property="og:image" content="https://zzzzzyh111.github.io/assets/img/yuhang.jpg">
   <link rel="canonical" href="https://zzzzzyh111.github.io/">
   <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -52,8 +53,7 @@
     <!-- ===================== Hero ===================== -->
     <section class="hero" id="about">
       <div class="hero__photo">
-        <!-- TODO: replace with a real photo, e.g. assets/img/avatar.jpg -->
-        <img src="assets/img/avatar.svg" alt="Portrait of Yuhang Zhang" width="200" height="200">
+        <img src="assets/img/yuhang.jpg" alt="Portrait of Yuhang Zhang" width="200" height="250">
       </div>
       <div class="hero__text">
         <h1 class="hero__name">Yuhang Zhang <span class="hero__cn" lang="zh-Hans">章雨航</span></h1>
@@ -62,101 +62,114 @@
           School of Mechanical and Aerospace Engineering, Nanyang Technological University
         </p>
         <ul class="links">
-          <li><a href="mailto:yuhang004@e.ntu.edu.sg"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>Email</a></li>
-          <li><a href="https://scholar.google.com/citations?user=KWGURJoAAAAJ" target="_blank" rel="noopener"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>Google Scholar</a></li>
-          <li><a href="https://github.com/zzzzzyh111" target="_blank" rel="noopener"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>GitHub</a></li>
-          <li><a href="https://www.linkedin.com/in/yuhang-zhang-422a47279/" target="_blank" rel="noopener"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>LinkedIn</a></li>
+          <li><a class="brand brand--mail" href="mailto:yuhang004@e.ntu.edu.sg"><svg class="icon icon--brand" viewBox="0 0 24 24" aria-hidden="true"><path d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.273H1.636A1.636 1.636 0 0 1 0 19.366V5.457c0-2.023 2.309-3.178 3.927-1.964L5.455 4.64 12 9.548l6.545-4.91 1.528-1.145C21.69 2.28 24 3.434 24 5.457z"/></svg>Email</a></li>
+          <li><a class="brand brand--scholar" href="https://scholar.google.com/citations?user=KWGURJoAAAAJ" target="_blank" rel="noopener"><svg class="icon icon--brand" viewBox="0 0 24 24" aria-hidden="true"><path d="M5.242 13.769L0 9.5 12 0l12 9.5-5.242 4.269C17.548 11.249 14.978 9.5 12 9.5c-2.977 0-5.548 1.748-6.758 4.269zM12 10a7 7 0 1 0 0 14 7 7 0 0 0 0-14z"/></svg>Google Scholar</a></li>
+          <li><a class="brand brand--github" href="https://github.com/zzzzzyh111" target="_blank" rel="noopener"><svg class="icon icon--brand" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>GitHub</a></li>
+          <li><a class="brand brand--linkedin" href="https://www.linkedin.com/in/yuhang-zhang-422a47279/" target="_blank" rel="noopener"><svg class="icon icon--brand" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>LinkedIn</a></li>
         </ul>
       </div>
     </section>
 
     <!-- ===================== About ===================== -->
     <section class="section about">
+      <h2><span class="h2__emoji" aria-hidden="true">👋</span>Hi there!</h2>
       <p>
-        I am a Ph.D. candidate in Robotics and Intelligent Systems at the School of Mechanical and Aerospace Engineering,
-        <a href="https://www.ntu.edu.sg/mae" target="_blank" rel="noopener">Nanyang Technological University</a> (NTU), Singapore,
-        supervised by Assoc. Prof. Mir Feroskhan.
+        I'm Yuhang, a Ph.D. candidate at
+        <a href="https://www.ntu.edu.sg/" target="_blank" rel="noopener">Nanyang Technological University</a> (NTU), Singapore,
+        advised by <a href="https://www.iclab.to/" target="_blank" rel="noopener">Assoc. Prof. Mir Feroskhan</a>.
+        Before that, I received my M.Eng. from NTU under the supervision of
+        <a href="https://lvchen.wixsite.com/automan" target="_blank" rel="noopener">Assoc. Prof. Chen Lv</a>,
+        and my B.Eng. from Harbin Engineering University (HEU), supervised by
+        <a href="https://faculty.hrbeu.edu.cn/guanben/zh_CN/tzybd/23645/list/index.htm" target="_blank" rel="noopener">Prof. Ben Guan</a>.
       </p>
       <p>
-        My research centers on <strong>embodied visual intelligence for aerial robots</strong>: learning visuomotor policies
-        directly from monocular vision, building action-conditioned world models, and grounding vision-language instructions
-        into flight. I am particularly interested in closing the sim-to-real gap with 3D Gaussian Splatting reconstructions
-        and deploying learned policies on real quadrotors.
+        My research focuses on <strong>visuomotor learning</strong> and <strong>vision-language navigation</strong> for aerial robots,
+        with the goal of flying drones from a single camera in the real world.
       </p>
-      <p>
-        Before my Ph.D., I received an M.Eng. in Robotics and Intelligent Systems from NTU, supervised by Assoc. Prof. Chen Lv,
-        and a B.Eng. in Flight Vehicle Propulsion Engineering from Harbin Engineering University.
-      </p>
-      <div class="tags" aria-label="Research interests">
-        <span class="tag">Embodied Visual Intelligence</span>
-        <span class="tag">World Models</span>
-        <span class="tag">Vision-Language Navigation</span>
-        <span class="tag">Visuomotor Learning</span>
-        <span class="tag">Reinforcement Learning</span>
-        <span class="tag">Sim-to-Real Transfer</span>
-        <span class="tag">Aerial Robotics</span>
-      </div>
+    </section>
+
+    <!-- ===================== Research Interests ===================== -->
+    <section class="section" id="interests">
+      <h2><span class="h2__emoji" aria-hidden="true">🔬</span>Research Interests</h2>
+      <ul class="interests">
+        <li>Aerial Robotics &amp; Autonomous Navigation</li>
+        <li>Visuomotor Policy Learning</li>
+        <li>Reinforcement Learning</li>
+        <li>World Models</li>
+        <li>Vision-Language Navigation</li>
+        <li>Contrastive Representation Learning</li>
+        <li>Sim-to-Real Transfer &amp; 3D Gaussian Splatting</li>
+        <li>Embodied Visual Intelligence</li>
+      </ul>
     </section>
 
     <!-- ===================== News ===================== -->
     <section class="section" id="news">
-      <h2>News</h2>
+      <h2><span class="h2__emoji" aria-hidden="true">📢</span>News</h2>
       <ul class="news">
-        <li><time datetime="2026-09">Sep 2026</time><span>Our preprint <a href="https://arxiv.org/abs/2609.26007" target="_blank" rel="noopener">Skytopia</a>, monocular drone navigation with action-conditioned latent world models, is now on arXiv.</span></li>
-        <li><time datetime="2026-07">Jul 2026</time><span><a href="https://ieeexplore.ieee.org/document/11601135" target="_blank" rel="noopener">OMC-RL</a> is accepted to <strong>IEEE TPAMI</strong>.</span></li>
-        <li><time datetime="2026-04">Apr 2026</time><span>Our preprint <a href="https://arxiv.org/abs/2604.05062" target="_blank" rel="noopener">GaussFly</a>, contrastive RL for visuomotor policies in 3D Gaussian fields, is now on arXiv.</span></li>
-        <li><time datetime="2026-02">Feb 2026</time><span>Our preprint <a href="https://arxiv.org/abs/2602.01040" target="_blank" rel="noopener">CAPO</a>, adaptive cross-embodiment visuomotor policy learning, is now on arXiv.</span></li>
-        <li><time datetime="2025-06">Jun 2025</time><span>Our preprint <a href="https://arxiv.org/abs/2506.10756" target="_blank" rel="noopener">VLFly</a>, open-vocabulary vision-language navigation for UAVs, is now on arXiv.</span></li>
+        <li><time datetime="2026-09">Sep. 2026</time><span>📄 Our paper <a href="https://arxiv.org/abs/2609.26007" target="_blank" rel="noopener">Skytopia: Monocular Drone Navigation with Action-Conditioned Latent World Models</a> is now on arXiv.</span></li>
+        <li><time datetime="2026-07">Jul. 2026</time><span>🎉 Our paper <a href="https://ieeexplore.ieee.org/document/11601135" target="_blank" rel="noopener">Oracle-Guided Masked Contrastive Reinforcement Learning for Visuomotor Policies</a> has been accepted to IEEE Transactions on Pattern Analysis and Machine Intelligence!</span></li>
+        <li><time datetime="2026-04">Apr. 2026</time><span>📄 Our paper <a href="https://arxiv.org/abs/2604.05062" target="_blank" rel="noopener">GaussFly: Contrastive Reinforcement Learning for Visuomotor Policies in 3D Gaussian Fields</a> is now on arXiv.</span></li>
+        <li><time datetime="2026-02">Feb. 2026</time><span>📄 Our paper <a href="https://arxiv.org/abs/2602.01040" target="_blank" rel="noopener">Learning Adaptive Cross-Embodiment Visuomotor Policy with Contrastive Prompt Orchestration</a> is now on arXiv.</span></li>
+        <li><time datetime="2025-06">Jun. 2025</time><span>📄 Our paper <a href="https://arxiv.org/abs/2506.10756" target="_blank" rel="noopener">Grounded Vision-Language Navigation for UAVs with Open-Vocabulary Goal Understanding</a> is now on arXiv.</span></li>
         <!-- TODO: confirm month -->
-        <li><time datetime="2025-04">Apr 2025</time><span><a href="https://ieeexplore.ieee.org/document/10960642" target="_blank" rel="noopener">CL4Nav</a> is accepted to <strong>IEEE RA-L</strong>.</span></li>
+        <li><time datetime="2025-04">Apr. 2025</time><span>🎉 Our paper <a href="https://ieeexplore.ieee.org/document/10960642" target="_blank" rel="noopener">Learning Cross-Modal Visuomotor Policies for Autonomous Drone Navigation</a> has been accepted to IEEE Robotics and Automation Letters!</span></li>
         <!-- TODO: confirm month -->
-        <li><time datetime="2024-09">Sep 2024</time><span><a href="https://ieeexplore.ieee.org/document/10684842" target="_blank" rel="noopener">NPE-DRL</a> is accepted to <strong>IEEE TAI</strong>.</span></li>
+        <li><time datetime="2024-09">Sep. 2024</time><span>🎉 Our paper <a href="https://ieeexplore.ieee.org/document/10684842" target="_blank" rel="noopener">NPE-DRL: Enhancing Perception Constrained Obstacle Avoidance with Non-Expert Policy Guided Reinforcement Learning</a> has been accepted to IEEE Transactions on Artificial Intelligence!</span></li>
+        <li><time datetime="2023-08">Aug. 2023</time><span>🚀 I've started my Ph.D. at Nanyang Technological University!</span></li>
       </ul>
     </section>
 
     <!-- ===================== Publications ===================== -->
     <section class="section" id="publications">
-      <h2>Publications</h2>
+      <h2><span class="h2__emoji" aria-hidden="true">📝</span>Publications</h2>
       <p class="section__note">Selected first-author publications. See <a href="https://scholar.google.com/citations?user=KWGURJoAAAAJ" target="_blank" rel="noopener">Google Scholar</a> for the full list.</p>
       <ol class="pubs">
 
         <li class="pub">
           <a class="pub__thumb" href="https://arxiv.org/abs/2609.26007" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
-            <!-- TODO: replace with GIF, e.g. assets/img/pub/skytopia.gif -->
+            <!-- TODO: GIF from the Skytopia video -->
             <img src="assets/img/pub/skytopia.svg" alt="" width="480" height="300" loading="lazy">
           </a>
           <div class="pub__body">
             <div class="pub__meta"><span class="badge badge--preprint">arXiv</span><span class="pub__year">2026</span></div>
             <h3 class="pub__title"><a href="https://arxiv.org/abs/2609.26007" target="_blank" rel="noopener">Skytopia: Monocular Drone Navigation with Action-Conditioned Latent World Models</a></h3>
             <p class="pub__authors"><strong>Yuhang Zhang</strong>, Rangya Zhang, Yujing Shang, Zhuoyuan Yu, Weiying Wang, Steven Yang, Qingsong Yan, Chao Yan, Mir Feroskhan</p>
+            <p class="pub__venue">arXiv preprint, 2026</p>
             <p class="pub__links">
               <a href="https://arxiv.org/abs/2609.26007" target="_blank" rel="noopener">arXiv</a>
+              <a href="https://www.bilibili.com/video/BV1DVeP6UEML/" target="_blank" rel="noopener">Video</a>
             </p>
           </div>
         </li>
 
         <li class="pub">
           <a class="pub__thumb" href="https://arxiv.org/abs/2604.05062" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+            <!-- TODO: GIF from the GaussFly video -->
             <img src="assets/img/pub/gaussfly.svg" alt="" width="480" height="300" loading="lazy">
           </a>
           <div class="pub__body">
             <div class="pub__meta"><span class="badge badge--preprint">arXiv</span><span class="pub__year">2026</span></div>
             <h3 class="pub__title"><a href="https://arxiv.org/abs/2604.05062" target="_blank" rel="noopener">GaussFly: Contrastive Reinforcement Learning for Visuomotor Policies in 3D Gaussian Fields</a></h3>
             <p class="pub__authors"><strong>Yuhang Zhang</strong>, Mingsheng Li, Yujing Shang, Zhuoyuan Yu, Chao Yan, Jiaping Xiao, Mir Feroskhan</p>
+            <p class="pub__venue">arXiv preprint, 2026</p>
             <p class="pub__links">
               <a href="https://arxiv.org/abs/2604.05062" target="_blank" rel="noopener">arXiv</a>
+              <a href="https://www.bilibili.com/video/BV1wC9KBdEyE/" target="_blank" rel="noopener">Video</a>
             </p>
           </div>
         </li>
 
         <li class="pub">
           <a class="pub__thumb" href="https://arxiv.org/abs/2602.01040" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+            <!-- TODO: GIF (no video yet) -->
             <img src="assets/img/pub/capo.svg" alt="" width="480" height="300" loading="lazy">
           </a>
           <div class="pub__body">
             <div class="pub__meta"><span class="badge badge--preprint">arXiv</span><span class="pub__year">2026</span></div>
             <h3 class="pub__title"><a href="https://arxiv.org/abs/2602.01040" target="_blank" rel="noopener">Learning Adaptive Cross-Embodiment Visuomotor Policy with Contrastive Prompt Orchestration</a></h3>
             <p class="pub__authors"><strong>Yuhang Zhang</strong>, Chao Yan, Jiaxi Yu, Jiaping Xiao, Mir Feroskhan</p>
+            <p class="pub__venue">arXiv preprint, 2026</p>
             <p class="pub__links">
               <a href="https://arxiv.org/abs/2602.01040" target="_blank" rel="noopener">arXiv</a>
             </p>
@@ -165,12 +178,14 @@
 
         <li class="pub">
           <a class="pub__thumb" href="https://zzzzzyh111.github.io/OMC-RL-Website/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+            <!-- TODO: GIF from the OMC-RL video -->
             <img src="assets/img/pub/omc-rl.svg" alt="" width="480" height="300" loading="lazy">
           </a>
           <div class="pub__body">
             <div class="pub__meta"><span class="badge badge--journal">IEEE TPAMI</span><span class="pub__year">2026</span></div>
             <h3 class="pub__title"><a href="https://ieeexplore.ieee.org/document/11601135" target="_blank" rel="noopener">Oracle-Guided Masked Contrastive Reinforcement Learning for Visuomotor Policies</a></h3>
             <p class="pub__authors"><strong>Yuhang Zhang</strong>, Jiaping Xiao, Chao Yan, Mir Feroskhan</p>
+            <p class="pub__venue">IEEE Transactions on Pattern Analysis and Machine Intelligence (TPAMI), 2026</p>
             <p class="pub__links">
               <a href="https://ieeexplore.ieee.org/document/11601135" target="_blank" rel="noopener">Paper</a>
               <a href="https://arxiv.org/abs/2510.05692" target="_blank" rel="noopener">arXiv</a>
@@ -183,12 +198,14 @@
 
         <li class="pub">
           <a class="pub__thumb" href="https://zzzzzyh111.github.io/VLFly/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+            <!-- TODO: GIF from the VLFly video -->
             <img src="assets/img/pub/vlfly.svg" alt="" width="480" height="300" loading="lazy">
           </a>
           <div class="pub__body">
             <div class="pub__meta"><span class="badge badge--preprint">arXiv</span><span class="pub__year">2025</span></div>
             <h3 class="pub__title"><a href="https://arxiv.org/abs/2506.10756" target="_blank" rel="noopener">Grounded Vision-Language Navigation for UAVs with Open-Vocabulary Goal Understanding</a></h3>
             <p class="pub__authors"><strong>Yuhang Zhang</strong>, Haosheng Yu, Jiaping Xiao, Mir Feroskhan</p>
+            <p class="pub__venue">arXiv preprint, 2025</p>
             <p class="pub__links">
               <a href="https://arxiv.org/abs/2506.10756" target="_blank" rel="noopener">arXiv</a>
               <a href="https://zzzzzyh111.github.io/VLFly/" target="_blank" rel="noopener">Project</a>
@@ -200,12 +217,13 @@
 
         <li class="pub">
           <a class="pub__thumb" href="https://ieeexplore.ieee.org/document/10960642" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
-            <img src="assets/img/pub/cl4nav.svg" alt="" width="480" height="300" loading="lazy">
+            <img src="assets/img/pub/cl4nav.gif" alt="" width="480" height="270" loading="lazy">
           </a>
           <div class="pub__body">
             <div class="pub__meta"><span class="badge badge--journal">IEEE RA-L</span><span class="pub__year">2025</span></div>
             <h3 class="pub__title"><a href="https://ieeexplore.ieee.org/document/10960642" target="_blank" rel="noopener">Learning Cross-Modal Visuomotor Policies for Autonomous Drone Navigation</a></h3>
             <p class="pub__authors"><strong>Yuhang Zhang</strong>, Jiaping Xiao, Mir Feroskhan</p>
+            <p class="pub__venue">IEEE Robotics and Automation Letters (RA&#8209;L), 2025</p>
             <p class="pub__links">
               <a href="https://ieeexplore.ieee.org/document/10960642" target="_blank" rel="noopener">Paper</a>
               <a href="https://github.com/zzzzzyh111/CL4Nav" target="_blank" rel="noopener" data-repo="zzzzzyh111/CL4Nav">Code</a>
@@ -215,12 +233,13 @@
 
         <li class="pub">
           <a class="pub__thumb" href="https://ieeexplore.ieee.org/document/10684842" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
-            <img src="assets/img/pub/npe-drl.svg" alt="" width="480" height="300" loading="lazy">
+            <img src="assets/img/pub/npe-drl.gif" alt="" width="480" height="270" loading="lazy">
           </a>
           <div class="pub__body">
             <div class="pub__meta"><span class="badge badge--journal">IEEE TAI</span><span class="pub__year">2024</span></div>
             <h3 class="pub__title"><a href="https://ieeexplore.ieee.org/document/10684842" target="_blank" rel="noopener">NPE-DRL: Enhancing Perception Constrained Obstacle Avoidance with Non-Expert Policy Guided Reinforcement Learning</a></h3>
             <p class="pub__authors"><strong>Yuhang Zhang</strong>, Chao Yan, Jiaping Xiao, Mir Feroskhan</p>
+            <p class="pub__venue">IEEE Transactions on Artificial Intelligence (TAI), 2024</p>
             <p class="pub__links">
               <a href="https://ieeexplore.ieee.org/document/10684842" target="_blank" rel="noopener">Paper</a>
               <a href="https://github.com/zzzzzyh111/NonExpert-Guided-Visual-UAV-Navigation-Gazebo" target="_blank" rel="noopener" data-repo="zzzzzyh111/NonExpert-Guided-Visual-UAV-Navigation-Gazebo">Code</a>
@@ -233,32 +252,30 @@
 
     <!-- ===================== Education ===================== -->
     <section class="section" id="education">
-      <h2>Education</h2>
+      <h2><span class="h2__emoji" aria-hidden="true">🎓</span>Education</h2>
       <ul class="edus">
         <li class="edu">
-          <!-- TODO: replace with the official NTU logo -->
-          <img class="edu__logo" src="assets/img/logo/ntu.svg" alt="" width="56" height="56">
+          <img class="edu__logo" src="assets/img/logo/ntu.png" alt="" width="56" height="56">
           <div class="edu__body">
             <div class="edu__head"><h3>Nanyang Technological University</h3><span class="edu__time">Aug 2023 – Dec 2026 (expected)</span></div>
             <p>Ph.D. in Robotics and Intelligent Systems · Full Scholarship</p>
-            <p class="muted">Supervisor: Assoc. Prof. Mir Feroskhan</p>
+            <p class="muted">Supervisor: <a href="https://www.iclab.to/" target="_blank" rel="noopener">Assoc. Prof. Mir Feroskhan</a></p>
           </div>
         </li>
         <li class="edu">
-          <img class="edu__logo" src="assets/img/logo/ntu.svg" alt="" width="56" height="56">
+          <img class="edu__logo" src="assets/img/logo/ntu.png" alt="" width="56" height="56">
           <div class="edu__body">
             <div class="edu__head"><h3>Nanyang Technological University</h3><span class="edu__time">Aug 2021 – Jun 2023</span></div>
             <p>M.Eng. in Robotics and Intelligent Systems</p>
-            <p class="muted">Supervisor: Assoc. Prof. Chen Lv</p>
+            <p class="muted">Supervisor: <a href="https://lvchen.wixsite.com/automan" target="_blank" rel="noopener">Assoc. Prof. Chen Lv</a></p>
           </div>
         </li>
         <li class="edu">
-          <!-- TODO: replace with the official HEU logo -->
-          <img class="edu__logo" src="assets/img/logo/heu.svg" alt="" width="56" height="56">
+          <img class="edu__logo" src="assets/img/logo/heu.png" alt="" width="56" height="56">
           <div class="edu__body">
             <div class="edu__head"><h3>Harbin Engineering University</h3><span class="edu__time">Sep 2017 – Jun 2021</span></div>
             <p>B.Eng. in Flight Vehicle Propulsion Engineering</p>
-            <p class="muted">Supervisor: Prof. Ben Guan</p>
+            <p class="muted">Supervisor: <a href="https://faculty.hrbeu.edu.cn/guanben/zh_CN/tzybd/23645/list/index.htm" target="_blank" rel="noopener">Prof. Ben Guan</a></p>
           </div>
         </li>
       </ul>
@@ -266,23 +283,25 @@
 
     <!-- ===================== Services ===================== -->
     <section class="section" id="services">
-      <h2>Academic Services</h2>
-      <ul class="services">
-        <li>
-          <span class="services__label">Journal Reviewer</span>
-          <span>
-            IEEE Transactions on Systems, Man, and Cybernetics: Systems (TSMC) ·
-            IEEE Transactions on Automation Science and Engineering (TASE) ·
-            IEEE Robotics and Automation Letters (RA&#8209;L) ·
-            IEEE Transactions on Vehicular Technology (TVT) ·
-            IEEE Transactions on Intelligent Transportation Systems (TITS)
-          </span>
-        </li>
-        <li>
-          <span class="services__label">Conference Reviewer</span>
-          <span>IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)</span>
-        </li>
-      </ul>
+      <h2><span class="h2__emoji" aria-hidden="true">🤝</span>Academic Services</h2>
+      <div class="services">
+        <div class="services__group">
+          <h3>Journal Reviewer</h3>
+          <ul>
+            <li>IEEE Transactions on Systems, Man, and Cybernetics: Systems (TSMC)</li>
+            <li>IEEE Transactions on Automation Science and Engineering (TASE)</li>
+            <li>IEEE Robotics and Automation Letters (RA&#8209;L)</li>
+            <li>IEEE Transactions on Vehicular Technology (TVT)</li>
+            <li>IEEE Transactions on Intelligent Transportation Systems (TITS)</li>
+          </ul>
+        </div>
+        <div class="services__group">
+          <h3>Conference Reviewer</h3>
+          <ul>
+            <li>IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)</li>
+          </ul>
+        </div>
+      </div>
     </section>
 
   </main>
