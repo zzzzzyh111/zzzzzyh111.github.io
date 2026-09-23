@@ -11,7 +11,7 @@
   var reduceMQ = window.matchMedia('(prefers-reduced-motion: reduce)');
   var coarse = window.matchMedia('(pointer: coarse)').matches;
   var DPR = Math.min(window.devicePixelRatio || 1, 2);
-  var MIN_WIDTH = 1000;
+  var MIN_REM = 62.5;                 // matches the CSS breakpoint, so it tracks the reader's font size
   var N = 760;
   var W = 0, H = 0, pts = [], sprites = [], droneSprite = null, theme = 'light';
   var mouse = { x: 0, y: 0, tx: 0, ty: 0 };
@@ -100,7 +100,8 @@
 
   function resize() {
     W = window.innerWidth; H = window.innerHeight;
-    enabled = W >= MIN_WIDTH;
+    var rem = parseFloat(getComputedStyle(document.documentElement).fontSize) || 16;
+    enabled = W >= MIN_REM * rem;
     canvas.width = Math.round(W * DPR); canvas.height = Math.round(H * DPR);
     canvas.style.width = W + 'px'; canvas.style.height = H + 'px';
     ctx.setTransform(DPR, 0, 0, DPR, 0, 0);
