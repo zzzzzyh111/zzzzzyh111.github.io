@@ -1,6 +1,6 @@
 # zzzzzyh111.github.io
 
-Personal academic homepage of Yuhang Zhang (章雨航), served by GitHub Pages at <https://zzzzzyh111.github.io/>.
+Personal academic homepage of Yuhang Zhang (章雨航), served by GitHub Pages at <https://yuhangzhang.com/>.
 
 Plain HTML + CSS + a little JavaScript. No build step, no Jekyll (`.nojekyll` is present).
 
