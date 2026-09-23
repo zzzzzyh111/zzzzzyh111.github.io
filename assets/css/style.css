@@ -99,13 +99,15 @@ h1, h2, h3 { font-family: var(--font-serif); font-weight: 600; letter-spacing: -
   inset: 0;
   width: 100%;
   height: 100%;
-  opacity: 0.9;
+  opacity: 0.92;
+  display: none;
 }
-/* calmer behind the text column, full strength in the margins */
-@media (min-width: 960px) {
+/* only the side margins: the 920px content column (plus a soft feather) is masked out */
+@media (min-width: 1000px) {
   .bg canvas {
-    -webkit-mask-image: linear-gradient(90deg, #000 0%, rgba(0, 0, 0, 0.6) 24%, rgba(0, 0, 0, 0.6) 76%, #000 100%);
-            mask-image: linear-gradient(90deg, #000 0%, rgba(0, 0, 0, 0.6) 24%, rgba(0, 0, 0, 0.6) 76%, #000 100%);
+    display: block;
+    -webkit-mask-image: linear-gradient(90deg, #000 0, #000 calc(50% - 530px), transparent calc(50% - 470px), transparent calc(50% + 470px), #000 calc(50% + 530px), #000 100%);
+            mask-image: linear-gradient(90deg, #000 0, #000 calc(50% - 530px), transparent calc(50% - 470px), transparent calc(50% + 470px), #000 calc(50% + 530px), #000 100%);
   }
 }
 
@@ -350,7 +352,7 @@ html.theme-anim *::after {
 .news time { color: var(--muted); font-size: 0.92rem; font-variant-numeric: tabular-nums; padding-top: 1px; white-space: nowrap; }
 
 /* ---------- publications ---------- */
-.pubs { list-style: none; margin: 0; padding: 0; display: grid; gap: 16px; perspective: 1100px; }
+.pubs { list-style: none; margin: 0; padding: 0; display: grid; gap: 16px; }
 .pub {
   display: grid;
   grid-template-columns: 210px 1fr;
@@ -363,11 +365,9 @@ html.theme-anim *::after {
   -webkit-backdrop-filter: blur(6px);
           backdrop-filter: blur(6px);
   align-items: start;
-  transform-style: preserve-3d;
   transition: transform 0.25s ease, border-color 0.2s ease, box-shadow 0.25s ease;
 }
 .pub:hover { transform: translateY(-3px); border-color: color-mix(in srgb, var(--accent) 45%, var(--border)); box-shadow: var(--shadow), 0 18px 40px -22px rgba(20, 30, 40, 0.35); }
-.pub.is-tilting { transition: border-color 0.2s ease, box-shadow 0.25s ease; }
 .pub__thumb { display: block; }
 .pub__thumb img,
 .pub__thumb video {

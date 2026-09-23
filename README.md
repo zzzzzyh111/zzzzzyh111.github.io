@@ -26,8 +26,8 @@ raw/                  # originals handed over (gitignored, never published)
 - **Make a thumbnail clip**: `ffmpeg -ss <start> -t 12 -i video.mp4 -vf "fps=15,scale=480:-2,format=yuv420p" -c:v libx264 -crf 26 -an assets/media/<slug>.mp4`
   then `ffmpeg -i assets/media/<slug>.mp4 -frames:v 1 -q:v 4 assets/media/<slug>.jpg` for the poster.
 - **Add news**: add one `<li>` at the top of `<ul class="news">`.
-- **Visitor map**: get a snippet at <https://clustrmaps.com/add> (enter `https://zzzzzyh111.github.io/`), then paste the
-  `<script ... src="//clustrmaps.com/map_v2.js?...">` line inside `<div class="visitors" id="visitors">` in `index.html`.
+- **Visitor map**: the MapMyVisitors widget lives inside `<div class="visitors" id="visitors">` in `index.html`;
+  stats at <https://mapmyvisitors.com/web/1c8eq>.
 - **Change colours / background**: edit the tokens at the top of `assets/css/style.css`; the background is the `.bg` layer.
 
 ## Preview locally
