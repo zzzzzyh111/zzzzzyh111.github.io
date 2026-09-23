@@ -29,6 +29,13 @@ raw/                  # originals handed over (gitignored, never published)
   stats at <https://mapmyvisitors.com/web/1c8eq>.
 - **Change colours / background**: edit the tokens at the top of `assets/css/style.css`; the background is the `.bg` layer.
 
+## Cache
+
+`index.html` links the stylesheet and scripts with a `?v=<date>` suffix. **Bump that suffix whenever you edit
+`style.css`, `fonts.css`, `bg.js` or `main.js`**, otherwise a visitor's browser can pair new HTML with an old
+cached stylesheet and the layout breaks. When replacing an image that is already live, rename the file instead
+of overwriting it, for the same reason.
+
 ## Preview locally
 
 ```bash
