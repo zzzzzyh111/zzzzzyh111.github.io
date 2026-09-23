@@ -19,7 +19,8 @@
   <link rel="stylesheet" href="assets/css/fonts.css">
   <link rel="stylesheet" href="assets/css/style.css">
   <script>
-    // Apply the saved theme before first paint to avoid a flash.
+    // Flag JS availability (gates scroll-reveal styles) and apply the saved theme before first paint.
+    document.documentElement.classList.add('js');
     (function () {
       try {
         var t = localStorage.getItem('theme');
@@ -30,7 +31,7 @@
 </head>
 <body>
   <!-- Background layer. Kept separate so it can later be swapped for a canvas / interactive effect. -->
-  <div class="bg" aria-hidden="true"></div>
+  <div class="bg" aria-hidden="true"><canvas id="bgCanvas"></canvas></div>
 
   <header class="nav">
     <div class="nav__inner">
@@ -73,7 +74,7 @@
     </section>
 
     <!-- ===================== About ===================== -->
-    <section class="section about">
+    <section class="section about reveal">
       <h2><span class="h2__emoji" aria-hidden="true">👋</span>Hi there!</h2>
       <p>
         I'm Yuhang Zhang, a Ph.D. candidate at
@@ -91,7 +92,7 @@
     </section>
 
     <!-- ===================== Research Interests ===================== -->
-    <section class="section" id="interests">
+    <section class="section reveal" id="interests">
       <h2><span class="h2__emoji" aria-hidden="true">🔬</span>Research Interests</h2>
       <ul class="interests">
         <li>Embodied Visual Intelligence</li>
@@ -102,31 +103,31 @@
     </section>
 
     <!-- ===================== News ===================== -->
-    <section class="section" id="news">
+    <section class="section reveal" id="news">
       <h2><span class="h2__emoji" aria-hidden="true">📢</span>News</h2>
       <ul class="news">
-        <li><time datetime="2026-09">Sep. 2026</time><span>📄 Our paper <a href="https://arxiv.org/abs/2609.26007" target="_blank" rel="noopener">Skytopia: Monocular Drone Navigation with Action-Conditioned Latent World Models</a> is now on arXiv.</span></li>
-        <li><time datetime="2026-07">Jul. 2026</time><span>🎉 Our paper <a href="https://ieeexplore.ieee.org/document/11601135" target="_blank" rel="noopener">Oracle-Guided Masked Contrastive Reinforcement Learning for Visuomotor Policies</a> has been accepted to IEEE Transactions on Pattern Analysis and Machine Intelligence (TPAMI)!</span></li>
-        <li><time datetime="2026-04">Apr. 2026</time><span>📄 Our paper <a href="https://arxiv.org/abs/2604.05062" target="_blank" rel="noopener">GaussFly: Contrastive Reinforcement Learning for Visuomotor Policies in 3D Gaussian Fields</a> is now on arXiv.</span></li>
-        <li><time datetime="2026-02">Feb. 2026</time><span>📄 Our paper <a href="https://arxiv.org/abs/2602.01040" target="_blank" rel="noopener">Learning Adaptive Cross-Embodiment Visuomotor Policy with Contrastive Prompt Orchestration</a> is now on arXiv.</span></li>
-        <li><time datetime="2025-06">Jun. 2025</time><span>📄 Our paper <a href="https://arxiv.org/abs/2506.10756" target="_blank" rel="noopener">Grounded Vision-Language Navigation for UAVs with Open-Vocabulary Goal Understanding</a> is now on arXiv.</span></li>
+        <li class="reveal" style="--i:0"><time datetime="2026-09">Sep. 2026</time><span>📄 Our paper <a href="https://arxiv.org/abs/2609.26007" target="_blank" rel="noopener">Skytopia: Monocular Drone Navigation with Action-Conditioned Latent World Models</a> is now on arXiv.</span></li>
+        <li class="reveal" style="--i:1"><time datetime="2026-07">Jul. 2026</time><span>🎉 Our paper <a href="https://ieeexplore.ieee.org/document/11601135" target="_blank" rel="noopener">Oracle-Guided Masked Contrastive Reinforcement Learning for Visuomotor Policies</a> has been accepted to IEEE Transactions on Pattern Analysis and Machine Intelligence (TPAMI)!</span></li>
+        <li class="reveal" style="--i:2"><time datetime="2026-04">Apr. 2026</time><span>📄 Our paper <a href="https://arxiv.org/abs/2604.05062" target="_blank" rel="noopener">GaussFly: Contrastive Reinforcement Learning for Visuomotor Policies in 3D Gaussian Fields</a> is now on arXiv.</span></li>
+        <li class="reveal" style="--i:3"><time datetime="2026-02">Feb. 2026</time><span>📄 Our paper <a href="https://arxiv.org/abs/2602.01040" target="_blank" rel="noopener">Learning Adaptive Cross-Embodiment Visuomotor Policy with Contrastive Prompt Orchestration</a> is now on arXiv.</span></li>
+        <li class="reveal" style="--i:4"><time datetime="2025-06">Jun. 2025</time><span>📄 Our paper <a href="https://arxiv.org/abs/2506.10756" target="_blank" rel="noopener">Grounded Vision-Language Navigation for UAVs with Open-Vocabulary Goal Understanding</a> is now on arXiv.</span></li>
         <!-- TODO: confirm month -->
-        <li><time datetime="2025-04">Apr. 2025</time><span>🎉 Our paper <a href="https://ieeexplore.ieee.org/document/10960642" target="_blank" rel="noopener">Learning Cross-Modal Visuomotor Policies for Autonomous Drone Navigation</a> has been accepted to IEEE Robotics and Automation Letters (RA&#8209;L)!</span></li>
+        <li class="reveal" style="--i:5"><time datetime="2025-04">Apr. 2025</time><span>🎉 Our paper <a href="https://ieeexplore.ieee.org/document/10960642" target="_blank" rel="noopener">Learning Cross-Modal Visuomotor Policies for Autonomous Drone Navigation</a> has been accepted to IEEE Robotics and Automation Letters (RA&#8209;L)!</span></li>
         <!-- TODO: confirm month -->
-        <li><time datetime="2024-09">Sep. 2024</time><span>🎉 Our paper <a href="https://ieeexplore.ieee.org/document/10684842" target="_blank" rel="noopener">NPE-DRL: Enhancing Perception Constrained Obstacle Avoidance with Non-Expert Policy Guided Reinforcement Learning</a> has been accepted to IEEE Transactions on Artificial Intelligence (TAI)!</span></li>
-        <li><time datetime="2023-08">Aug. 2023</time><span>🚀 I've started my Ph.D. at Nanyang Technological University!</span></li>
+        <li class="reveal" style="--i:6"><time datetime="2024-09">Sep. 2024</time><span>🎉 Our paper <a href="https://ieeexplore.ieee.org/document/10684842" target="_blank" rel="noopener">NPE-DRL: Enhancing Perception Constrained Obstacle Avoidance with Non-Expert Policy Guided Reinforcement Learning</a> has been accepted to IEEE Transactions on Artificial Intelligence (TAI)!</span></li>
+        <li class="reveal" style="--i:7"><time datetime="2023-08">Aug. 2023</time><span>🚀 I've started my Ph.D. at Nanyang Technological University!</span></li>
       </ul>
     </section>
 
     <!-- ===================== Publications ===================== -->
-    <section class="section" id="publications">
+    <section class="section reveal" id="publications">
       <h2><span class="h2__emoji" aria-hidden="true">📝</span>Publications</h2>
       <p class="section__note">Selected first-author publications. See <a href="https://scholar.google.com/citations?user=KWGURJoAAAAJ" target="_blank" rel="noopener">Google Scholar</a> for the full list.</p>
       <ol class="pubs">
 
-        <li class="pub">
+        <li class="pub reveal" style="--i:0">
           <a class="pub__thumb" href="https://eugshang.github.io/Skytopia/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
-            <video class="pub__media" autoplay muted loop playsinline preload="metadata" poster="assets/media/skytopia.jpg" width="480" height="270" tabindex="-1">
+            <video class="pub__media" muted loop playsinline preload="metadata" poster="assets/media/skytopia.jpg" width="480" height="270" tabindex="-1">
               <source src="assets/media/skytopia.mp4" type="video/mp4">
             </video>
           </a>
@@ -143,9 +144,9 @@
           </div>
         </li>
 
-        <li class="pub">
+        <li class="pub reveal" style="--i:1">
           <a class="pub__thumb" href="https://zzzzzyh111.github.io/GaussFly_Web/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
-            <video class="pub__media" autoplay muted loop playsinline preload="metadata" poster="assets/media/gaussfly.jpg" width="480" height="270" tabindex="-1">
+            <video class="pub__media" muted loop playsinline preload="metadata" poster="assets/media/gaussfly.jpg" width="480" height="270" tabindex="-1">
               <source src="assets/media/gaussfly.mp4" type="video/mp4">
             </video>
           </a>
@@ -162,9 +163,9 @@
           </div>
         </li>
 
-        <li class="pub">
+        <li class="pub reveal" style="--i:2">
           <a class="pub__thumb" href="https://arxiv.org/abs/2602.01040" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
-            <video class="pub__media" autoplay muted loop playsinline preload="metadata" poster="assets/media/capo.jpg" width="480" height="270" tabindex="-1">
+            <video class="pub__media" muted loop playsinline preload="metadata" poster="assets/media/capo.jpg" width="480" height="270" tabindex="-1">
               <source src="assets/media/capo.mp4" type="video/mp4">
             </video>
           </a>
@@ -179,9 +180,9 @@
           </div>
         </li>
 
-        <li class="pub">
+        <li class="pub reveal" style="--i:3">
           <a class="pub__thumb" href="https://zzzzzyh111.github.io/OMC-RL-Website/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
-            <video class="pub__media" autoplay muted loop playsinline preload="metadata" poster="assets/media/omc-rl.jpg" width="480" height="270" tabindex="-1">
+            <video class="pub__media" muted loop playsinline preload="metadata" poster="assets/media/omc-rl.jpg" width="480" height="270" tabindex="-1">
               <source src="assets/media/omc-rl.mp4" type="video/mp4">
             </video>
           </a>
@@ -198,9 +199,9 @@
           </div>
         </li>
 
-        <li class="pub">
+        <li class="pub reveal" style="--i:4">
           <a class="pub__thumb" href="https://zzzzzyh111.github.io/VLFly/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
-            <video class="pub__media" autoplay muted loop playsinline preload="metadata" poster="assets/media/vlfly.jpg" width="480" height="270" tabindex="-1">
+            <video class="pub__media" muted loop playsinline preload="metadata" poster="assets/media/vlfly.jpg" width="480" height="270" tabindex="-1">
               <source src="assets/media/vlfly.mp4" type="video/mp4">
             </video>
           </a>
@@ -217,9 +218,9 @@
           </div>
         </li>
 
-        <li class="pub">
+        <li class="pub reveal" style="--i:5">
           <a class="pub__thumb" href="https://ieeexplore.ieee.org/document/10960642" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
-            <video class="pub__media" autoplay muted loop playsinline preload="metadata" poster="assets/media/cl4nav.jpg" width="480" height="270" tabindex="-1">
+            <video class="pub__media" muted loop playsinline preload="metadata" poster="assets/media/cl4nav.jpg" width="480" height="270" tabindex="-1">
               <source src="assets/media/cl4nav.mp4" type="video/mp4">
             </video>
           </a>
@@ -235,9 +236,9 @@
           </div>
         </li>
 
-        <li class="pub">
+        <li class="pub reveal" style="--i:6">
           <a class="pub__thumb" href="https://ieeexplore.ieee.org/document/10684842" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
-            <video class="pub__media" autoplay muted loop playsinline preload="metadata" poster="assets/media/npe-drl.jpg" width="480" height="270" tabindex="-1">
+            <video class="pub__media" muted loop playsinline preload="metadata" poster="assets/media/npe-drl.jpg" width="480" height="270" tabindex="-1">
               <source src="assets/media/npe-drl.mp4" type="video/mp4">
             </video>
           </a>
@@ -257,10 +258,10 @@
     </section>
 
     <!-- ===================== Education ===================== -->
-    <section class="section" id="education">
+    <section class="section reveal" id="education">
       <h2><span class="h2__emoji" aria-hidden="true">🎓</span>Education</h2>
       <ul class="edus">
-        <li class="edu">
+        <li class="edu reveal" style="--i:0">
           <img class="edu__logo" src="assets/img/logo/ntu.png" alt="" width="56" height="56">
           <div class="edu__body">
             <div class="edu__head"><h3>Nanyang Technological University</h3><span class="edu__time">Aug 2023 – Dec 2026 (expected)</span></div>
@@ -268,7 +269,7 @@
             <p class="muted">Supervisor: <a href="https://www.iclab.to/" target="_blank" rel="noopener">Assoc. Prof. Mir Feroskhan</a></p>
           </div>
         </li>
-        <li class="edu">
+        <li class="edu reveal" style="--i:1">
           <img class="edu__logo" src="assets/img/logo/ntu.png" alt="" width="56" height="56">
           <div class="edu__body">
             <div class="edu__head"><h3>Nanyang Technological University</h3><span class="edu__time">Aug 2021 – Jun 2023</span></div>
@@ -276,7 +277,7 @@
             <p class="muted">Supervisor: <a href="https://lvchen.wixsite.com/automan" target="_blank" rel="noopener">Assoc. Prof. Chen Lv</a></p>
           </div>
         </li>
-        <li class="edu">
+        <li class="edu reveal" style="--i:2">
           <img class="edu__logo" src="assets/img/logo/heu.png" alt="" width="56" height="56">
           <div class="edu__body">
             <div class="edu__head"><h3>Harbin Engineering University</h3><span class="edu__time">Sep 2017 – Jun 2021</span></div>
@@ -288,7 +289,7 @@
     </section>
 
     <!-- ===================== Services ===================== -->
-    <section class="section" id="services">
+    <section class="section reveal" id="services">
       <h2><span class="h2__emoji" aria-hidden="true">🤝</span>Academic Services</h2>
       <div class="services">
         <div class="services__group">
@@ -323,6 +324,7 @@
     <p class="footer__small">Hand-built with plain HTML &amp; CSS · Hosted on GitHub Pages</p>
   </footer>
 
+  <script src="assets/js/bg.js" defer></script>
   <script src="assets/js/main.js" defer></script>
 </body>
 </html>

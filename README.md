@@ -9,7 +9,8 @@ Plain HTML + CSS + a little JavaScript. No build step, no Jekyll (`.nojekyll` is
 ```
 index.html            # all page content lives here
 assets/css/style.css  # design tokens (:root), light/dark themes, layout
-assets/js/main.js     # theme toggle, active nav link, live GitHub star counts
+assets/js/bg.js       # 3DGS-style point-field background (canvas, no libraries)
+assets/js/main.js     # theme toggle, scroll reveal, card tilt, hover video, star counts, back-to-top
 assets/css/fonts.css  # self-hosted Inter + Source Serif 4 (no Google Fonts request)
 assets/fonts/         # the two variable woff2 files
 assets/img/yuhang.jpg # portrait
