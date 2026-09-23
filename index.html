@@ -112,7 +112,7 @@
     <!-- ===================== News ===================== -->
     <section class="section reveal" id="news">
       <h2><span class="h2__emoji" aria-hidden="true">📢</span>News</h2>
-      <ul class="news">
+      <ul class="news is-collapsed" id="newsList">
         <li class="reveal" style="--i:0"><time datetime="2026-09">Sep. 2026</time><span>📄 Our paper <a href="https://arxiv.org/abs/2609.26007" target="_blank" rel="noopener">Skytopia: Monocular Drone Navigation with Action-Conditioned Latent World Models</a> is now on arXiv.</span></li>
         <li class="reveal" style="--i:1"><time datetime="2026-07">Jul. 2026</time><span>🎉 Our paper <a href="https://ieeexplore.ieee.org/document/11601135" target="_blank" rel="noopener">Oracle-Guided Masked Contrastive Reinforcement Learning for Visuomotor Policies</a> has been accepted to IEEE Transactions on Pattern Analysis and Machine Intelligence (TPAMI)!</span></li>
         <li class="reveal" style="--i:2"><time datetime="2026-04">Apr. 2026</time><span>📄 Our paper <a href="https://arxiv.org/abs/2604.05062" target="_blank" rel="noopener">GaussFly: Contrastive Reinforcement Learning for Visuomotor Policies in 3D Gaussian Fields</a> is now on arXiv.</span></li>
@@ -124,6 +124,10 @@
         <li class="reveal" style="--i:6"><time datetime="2024-09">Sep. 2024</time><span>🎉 Our paper <a href="https://ieeexplore.ieee.org/document/10684842" target="_blank" rel="noopener">NPE-DRL: Enhancing Perception Constrained Obstacle Avoidance with Non-Expert Policy Guided Reinforcement Learning</a> has been accepted to IEEE Transactions on Artificial Intelligence (TAI)!</span></li>
         <li class="reveal" style="--i:7"><time datetime="2023-08">Aug. 2023</time><span>🚀 I've started my Ph.D. at Nanyang Technological University!</span></li>
       </ul>
+      <button class="news__toggle" id="newsToggle" type="button" aria-expanded="false" aria-controls="newsList" hidden>
+        <span class="news__toggle-label">Show all updates</span>
+        <svg class="icon news__chev" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+      </button>
     </section>
 
     <!-- ===================== Publications ===================== -->
@@ -134,9 +138,7 @@
 
         <li class="pub reveal" style="--i:0">
           <a class="pub__thumb" href="https://eugshang.github.io/Skytopia/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
-            <video class="pub__media" muted loop playsinline preload="metadata" poster="assets/media/skytopia.jpg" width="480" height="270" tabindex="-1">
-              <source src="assets/media/skytopia.mp4" type="video/mp4">
-            </video>
+            <img class="pub__media" src="assets/figs/skytopia.webp" alt="Skytopia framework diagram" loading="lazy" decoding="async">
           </a>
           <div class="pub__body">
             <div class="pub__meta"><span class="badge badge--preprint">arXiv</span><span class="pub__year">2026</span></div>
@@ -153,9 +155,7 @@
 
         <li class="pub reveal" style="--i:1">
           <a class="pub__thumb" href="https://yuhangzhang.com/GaussFly_Web/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
-            <video class="pub__media" muted loop playsinline preload="metadata" poster="assets/media/gaussfly.jpg" width="480" height="270" tabindex="-1">
-              <source src="assets/media/gaussfly.mp4" type="video/mp4">
-            </video>
+            <img class="pub__media" src="assets/figs/gaussfly.webp" alt="GaussFly framework diagram" loading="lazy" decoding="async">
           </a>
           <div class="pub__body">
             <div class="pub__meta"><span class="badge badge--preprint">arXiv</span><span class="pub__year">2026</span></div>
@@ -172,9 +172,7 @@
 
         <li class="pub reveal" style="--i:2">
           <a class="pub__thumb" href="https://arxiv.org/abs/2602.01040" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
-            <video class="pub__media" muted loop playsinline preload="metadata" poster="assets/media/capo.jpg" width="480" height="270" tabindex="-1">
-              <source src="assets/media/capo.mp4" type="video/mp4">
-            </video>
+            <img class="pub__media" src="assets/figs/capo.webp" alt="CAPO framework diagram" loading="lazy" decoding="async">
           </a>
           <div class="pub__body">
             <div class="pub__meta"><span class="badge badge--preprint">arXiv</span><span class="pub__year">2026</span></div>
@@ -189,9 +187,7 @@
 
         <li class="pub reveal" style="--i:3">
           <a class="pub__thumb" href="https://yuhangzhang.com/OMC-RL-Website/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
-            <video class="pub__media" muted loop playsinline preload="metadata" poster="assets/media/omc-rl.jpg" width="480" height="270" tabindex="-1">
-              <source src="assets/media/omc-rl.mp4" type="video/mp4">
-            </video>
+            <img class="pub__media" src="assets/figs/omc-rl.webp" alt="OMC-RL framework diagram" loading="lazy" decoding="async">
           </a>
           <div class="pub__body">
             <div class="pub__meta"><span class="badge badge--journal">IEEE TPAMI</span><span class="pub__year">2026</span></div>
@@ -208,9 +204,7 @@
 
         <li class="pub reveal" style="--i:4">
           <a class="pub__thumb" href="https://yuhangzhang.com/VLFly/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
-            <video class="pub__media" muted loop playsinline preload="metadata" poster="assets/media/vlfly.jpg" width="480" height="270" tabindex="-1">
-              <source src="assets/media/vlfly.mp4" type="video/mp4">
-            </video>
+            <img class="pub__media" src="assets/figs/vlfly.webp" alt="VLFly framework diagram" loading="lazy" decoding="async">
           </a>
           <div class="pub__body">
             <div class="pub__meta"><span class="badge badge--preprint">arXiv</span><span class="pub__year">2025</span></div>
@@ -227,9 +221,7 @@
 
         <li class="pub reveal" style="--i:5">
           <a class="pub__thumb" href="https://ieeexplore.ieee.org/document/10960642" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
-            <video class="pub__media" muted loop playsinline preload="metadata" poster="assets/media/cl4nav.jpg" width="480" height="270" tabindex="-1">
-              <source src="assets/media/cl4nav.mp4" type="video/mp4">
-            </video>
+            <img class="pub__media" src="assets/figs/cl4nav.webp" alt="CL4Nav framework diagram" loading="lazy" decoding="async">
           </a>
           <div class="pub__body">
             <div class="pub__meta"><span class="badge badge--journal">IEEE RA-L</span><span class="pub__year">2025</span></div>
@@ -245,9 +237,7 @@
 
         <li class="pub reveal" style="--i:6">
           <a class="pub__thumb" href="https://ieeexplore.ieee.org/document/10684842" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
-            <video class="pub__media" muted loop playsinline preload="metadata" poster="assets/media/npe-drl.jpg" width="480" height="270" tabindex="-1">
-              <source src="assets/media/npe-drl.mp4" type="video/mp4">
-            </video>
+            <img class="pub__media" src="assets/figs/npe-drl.webp" alt="NPE-DRL framework diagram" loading="lazy" decoding="async">
           </a>
           <div class="pub__body">
             <div class="pub__meta"><span class="badge badge--journal">IEEE TAI</span><span class="pub__year">2024</span></div>

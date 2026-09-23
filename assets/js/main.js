@@ -2,7 +2,6 @@
 (function () {
   var root = document.documentElement;
   var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  var hoverable = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
 
   /* ----- theme toggle ----- */
   var btn = document.getElementById('themeToggle');
@@ -66,30 +65,26 @@
   // safety net: never leave content hidden if an observer callback is missed
   setTimeout(function () { Array.prototype.forEach.call(revealEls, function (el) { el.classList.add('is-in'); }); }, 3000);
 
-  /* ----- publication cards: video plays on hover (desktop) or in view (touch) ----- */
-  var cards = document.querySelectorAll('.pub');
-  Array.prototype.forEach.call(cards, function (card) {
-    var v = card.querySelector('video');
-    if (hoverable) {
-      card.addEventListener('pointerenter', function () {
-        if (v) { v.muted = true; var p = v.play(); if (p && p.catch) p.catch(function () {}); }
+  /* ----- News: collapsed to the latest three until expanded ----- */
+  var newsList = document.getElementById('newsList');
+  var newsToggle = document.getElementById('newsToggle');
+  if (newsList && newsToggle) {
+    var hidden = Math.max(0, newsList.children.length - 3);
+    if (hidden === 0) {
+      newsList.classList.remove('is-collapsed');
+    } else {
+      newsToggle.hidden = false;
+      var label = newsToggle.querySelector('.news__toggle-label');
+      label.textContent = 'Show all ' + newsList.children.length + ' updates';
+      newsToggle.addEventListener('click', function () {
+        var open = newsList.classList.toggle('is-collapsed') === false;
+        newsToggle.setAttribute('aria-expanded', String(open));
+        label.textContent = open ? 'Show less' : 'Show all ' + newsList.children.length + ' updates';
+        if (!open) {
+          var top = newsList.getBoundingClientRect().top + window.scrollY - 90;
+          window.scrollTo({ top: top, behavior: reduce ? 'auto' : 'smooth' });
+        }
       });
-      card.addEventListener('pointerleave', function () {
-        if (v) { v.pause(); try { v.currentTime = 0; } catch (err) {} }
-      });
-    }
-  });
-  if (!hoverable) {
-    var vids = document.querySelectorAll('.pub__thumb video');
-    if ('IntersectionObserver' in window && vids.length) {
-      var vio = new IntersectionObserver(function (entries) {
-        entries.forEach(function (entry) {
-          var v = entry.target;
-          if (entry.isIntersecting) { v.muted = true; var p = v.play(); if (p && p.catch) p.catch(function () {}); }
-          else { v.pause(); }
-        });
-      }, { rootMargin: '200px 0px' });
-      Array.prototype.forEach.call(vids, function (v) { vio.observe(v); });
     }
   }
 
