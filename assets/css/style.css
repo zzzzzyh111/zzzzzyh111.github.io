@@ -393,6 +393,37 @@ h1, h2, h3 { font-family: var(--font-serif); font-weight: 600; letter-spacing: -
 .services__group ul { margin: 0; padding-left: 20px; }
 .services__group li { margin: 3px 0; }
 
+/* ---------- back to top ---------- */
+.to-top {
+  position: fixed;
+  right: 20px;
+  bottom: 24px;
+  z-index: 9;
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text);
+  box-shadow: var(--shadow);
+  -webkit-backdrop-filter: blur(8px);
+          backdrop-filter: blur(8px);
+  opacity: 0;
+  transform: translateY(12px);
+  pointer-events: none;
+  transition: opacity 0.2s ease, transform 0.2s ease, border-color 0.15s, color 0.15s;
+}
+.to-top.is-visible { opacity: 1; transform: none; pointer-events: auto; }
+.to-top:hover { border-color: var(--accent); color: var(--accent); text-decoration: none; }
+.to-top .icon { width: 20px; height: 20px; }
+
+/* ---------- visitor map ---------- */
+.visitors { max-width: 360px; margin: 0 auto 16px; }
+.visitors:empty { display: none; }
+.visitors img, .visitors canvas { max-width: 100%; height: auto; border-radius: 8px; }
+
 /* ---------- footer ---------- */
 .footer {
   text-align: center;
@@ -418,6 +449,7 @@ h1, h2, h3 { font-family: var(--font-serif); font-weight: 600; letter-spacing: -
   .edu__logo { width: 44px; height: 44px; border-radius: 10px; }
   .edu__time { white-space: normal; }
   .nav__brand { font-size: 1rem; }
+  .to-top { right: 14px; bottom: 16px; width: 40px; height: 40px; }
   .nav__links a { padding: 6px 9px; font-size: 0.88rem; }
   .nav__links {
     -webkit-mask-image: linear-gradient(to right, #000 calc(100% - 28px), transparent);

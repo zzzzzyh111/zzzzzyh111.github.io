@@ -36,6 +36,16 @@
     Object.keys(byId).forEach(function (id) { io.observe(document.getElementById(id)); });
   }
 
+  /* ----- back-to-top button ----- */
+  var toTop = document.getElementById('toTop');
+  if (toTop) {
+    var toTopTick = false;
+    function updateToTop() { toTop.classList.toggle('is-visible', window.scrollY > 480); toTopTick = false; }
+    window.addEventListener('scroll', function () { if (!toTopTick) { toTopTick = true; requestAnimationFrame(updateToTop); } }, { passive: true });
+    updateToTop();
+    toTop.addEventListener('click', function (e) { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); });
+  }
+
   /* ----- play thumbnail videos only while they are near the viewport ----- */
   var vids = document.querySelectorAll('.pub__thumb video');
   if ('IntersectionObserver' in window && vids.length) {
